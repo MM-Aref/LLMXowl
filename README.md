@@ -19,3 +19,31 @@ git clone https://github.com/MM-Aref/LLMXowl.git
 cd LLMXowl
 pip install -r requirements.txt
 mv .env-example .env
+
+```
+from ontomap.ontology import MouseHumanOMDataset
+from ontomap.base import BaseConfig
+from ontomap.ontology_matchers import MistralLLMBertRAG
+
+# Initialize configuration
+config = BaseConfig(approach='rag').get_args(device='cuda')
+
+# Load and process dataset
+ontology = MouseHumanOMDataset().collect(root_dir="datasets")
+
+# Generate matches
+model = MistralLLMBertRAG(config.MistralBertRAG)
+predicts = model.generate(input_data=encoded_inputs)
+```
+
+## Citation
+```
+@misc{giglou2024llms4om,
+    title={LLMs4OM: Matching Ontologies with Large Language Models},
+    author={Hamed Babaei Giglou and Jennifer D'Souza and Felix Engel and Sören Auer},
+    year={2024},
+    eprint={2404.10317},
+    archivePrefix={arXiv}
+}
+```
+
