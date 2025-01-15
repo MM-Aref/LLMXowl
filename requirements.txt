@@ -1,0 +1,17 @@
+accelerate
+bitsandbytes
+deeponto
+ontospy
+openai
+owlready2
+pivottablejs
+protobuf
+python-dotenv
+rank_bm25
+rapidfuzz
+rdflib
+scipy
+sentence-transformers
+sentencepiece
+torch
+transformers
